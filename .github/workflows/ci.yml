@@ -84,9 +84,10 @@ jobs:
           do
             cp -a "../build/$TARGET" ./
           done
-          git remote set-url origin "https://${{ secrets.BOT_TOKEN }}@github.com/fcitx5-android/prebuilt.git"
+          git remote set-url origin "https://${{ secrets.BOT_TOKEN }}@github.com/MOldtime/prebuilt.git"
           git config user.name "Fcitx5 Android Bot"
-          git config user.email "102923727+fcitx5-android-bot@users.noreply.github.com"
+          git config user.email "nothing"
           git add .
           git diff-index --quiet HEAD || git commit -m "Auto update"
+          git pull
           git push --set-upstream origin "HEAD:master" --follow-tags --atomic
